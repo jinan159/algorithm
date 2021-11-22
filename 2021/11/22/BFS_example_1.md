@@ -41,7 +41,7 @@ class Solutions {
     public void bfs() {
         Queue<Pair> queue = new LinkedList<>();
 
-        // index = 0:상, 1:하, 2:좌, 3:우
+        // index = 0:하, 1:우, 2:상, 3:좌
         int[] dy = {1,0,-1,0};
         int[] dx = {0,1,0,-1};
 
