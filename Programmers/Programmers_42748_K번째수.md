@@ -7,6 +7,9 @@ https://programmers.co.kr/learn/courses/30/lessons/42748
 
 # 풀이
 
+<details>
+<summary>java</summary>
+
 ```java
 import java.util.Arrays;
 
@@ -34,8 +37,40 @@ class Solution {
 }
 ```
 
+</details>
+
+<details>
+<summary>python3</summary>
+
+```python
+def solution(array : list, commands : list):
+    answer = []
+
+    for command in commands:
+        start = command[0] - 1
+        end = command[1]
+        index = command[2] - 1
+
+        array_copy = array.copy()
+        array_copy = array_copy[start:end]
+        array_copy.sort()
+        answer.append(array_copy[index])
+
+    return answer
+```
+
+</details>
+
 ----
 
 # 결과
 
+<details>
+<summary>java</summary>
 ![image](https://user-images.githubusercontent.com/45728407/150055586-9ee3b61d-d5ba-4e11-9086-7e7ec6f520ea.png)
+</details>
+
+<details>
+<summary>python3</summary>
+
+</details>
