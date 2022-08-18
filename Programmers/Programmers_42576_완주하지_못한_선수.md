@@ -55,6 +55,10 @@ https://programmers.co.kr/learn/courses/30/lessons/42576?language=java
 
 ----
 # 풀이
+
+<details>
+<summary>java</summary>
+
 ```java
 import java.util.HashMap;
 
@@ -101,6 +105,49 @@ class Solution {
     }
 }
 ```
+
+</details>
+
+<details>
+<summary>python3</summary>
+
+```python
+def solution(participant: list, completion: list):
+
+    participant_map = {}
+
+    for p in participant:
+        if p in participant_map.keys():
+            count = participant_map[p]
+            participant_map[p] = count + 1
+        else:
+            participant_map[p] = 1
+
+    for c in completion:
+        count = participant_map[c]
+        participant_map[c] = count - 1
+
+        if participant_map[c] == 0:
+            participant_map.pop(c)
+
+    print(participant_map)
+    print(list(participant_map)[0])
+
+    return list(participant_map)[0]
+```
+
+</details>
+
 ----
+
 # 결과
+
+<details>
+<summary>java</summary>
 <pre class="console-content"><div></div><div class="console-heading">채점을 시작합니다.</div><div class="console-message">정확성  테스트</div><table class="console-test-group" data-category="correctness"><tbody><tr data-testcase-id="32794"><td valign="top" class="td-label">테스트 1 <span>〉</span></td><td class="result passed">통과 (0.03ms, 73.5MB)</td></tr><tr data-testcase-id="32795"><td valign="top" class="td-label">테스트 2 <span>〉</span></td><td class="result passed">통과 (0.05ms, 77.3MB)</td></tr><tr data-testcase-id="32796"><td valign="top" class="td-label">테스트 3 <span>〉</span></td><td class="result passed">통과 (0.33ms, 76.8MB)</td></tr><tr data-testcase-id="32797"><td valign="top" class="td-label">테스트 4 <span>〉</span></td><td class="result passed">통과 (0.53ms, 74.8MB)</td></tr><tr data-testcase-id="32798"><td valign="top" class="td-label">테스트 5 <span>〉</span></td><td class="result passed">통과 (0.52ms, 79.2MB)</td></tr></tbody></table><div class="console-message">효율성  테스트</div><table class="console-test-group" data-category="effectiveness"><tbody><tr data-testcase-id="32786"><td valign="top" class="td-label">테스트 1 <span>〉</span></td><td class="result passed">통과 (27.10ms, 81.7MB)</td></tr><tr data-testcase-id="32787"><td valign="top" class="td-label">테스트 2 <span>〉</span></td><td class="result passed">통과 (56.52ms, 87.8MB)</td></tr><tr data-testcase-id="32788"><td valign="top" class="td-label">테스트 3 <span>〉</span></td><td class="result passed">통과 (48.76ms, 113MB)</td></tr><tr data-testcase-id="32789"><td valign="top" class="td-label">테스트 4 <span>〉</span></td><td class="result passed">통과 (50.20ms, 97MB)</td></tr><tr data-testcase-id="32790"><td valign="top" class="td-label">테스트 5 <span>〉</span></td><td class="result passed">통과 (87.42ms, 97.4MB)</td></tr></tbody></table><div class="console-heading">채점 결과</div><div class="console-message">정확성: 50.0</div><div class="console-message">효율성: 50.0</div><div class="console-message">합계: 100.0 / 100.0</div></pre>
+</details>
+
+<details>
+<summary>python3</summary>
+<div id="output" class="console-output tab-pane fade in active show"><pre class="console-content"><div></div><div class="console-heading">채점을 시작합니다.</div><div class="console-message">정확성  테스트</div><table class="console-test-group" data-category="correctness"><tbody><tr data-testcase-id="32794"><td valign="top" class="td-label">테스트 1 <span>〉</span></td><td class="result passed">통과 (0.02ms, 9.95MB)</td></tr><tr data-testcase-id="32795"><td valign="top" class="td-label">테스트 2 <span>〉</span></td><td class="result passed">통과 (0.01ms, 10MB)</td></tr><tr data-testcase-id="32796"><td valign="top" class="td-label">테스트 3 <span>〉</span></td><td class="result passed">통과 (0.22ms, 10MB)</td></tr><tr data-testcase-id="32797"><td valign="top" class="td-label">테스트 4 <span>〉</span></td><td class="result passed">통과 (0.43ms, 10.5MB)</td></tr><tr data-testcase-id="32798"><td valign="top" class="td-label">테스트 5 <span>〉</span></td><td class="result passed">통과 (0.45ms, 10.2MB)</td></tr></tbody></table><div class="console-message">효율성  테스트</div><table class="console-test-group" data-category="effectiveness"><tbody><tr data-testcase-id="32786"><td valign="top" class="td-label">테스트 1 <span>〉</span></td><td class="result passed">통과 (26.93ms, 21.6MB)</td></tr><tr data-testcase-id="32787"><td valign="top" class="td-label">테스트 2 <span>〉</span></td><td class="result passed">통과 (43.08ms, 25.1MB)</td></tr><tr data-testcase-id="32788"><td valign="top" class="td-label">테스트 3 <span>〉</span></td><td class="result passed">통과 (67.86ms, 27.5MB)</td></tr><tr data-testcase-id="32789"><td valign="top" class="td-label">테스트 4 <span>〉</span></td><td class="result passed">통과 (67.60ms, 34MB)</td></tr><tr data-testcase-id="32790"><td valign="top" class="td-label">테스트 5 <span>〉</span></td><td class="result passed">통과 (63.05ms, 34MB)</td></tr></tbody></table><div class="console-heading">채점 결과</div><div class="console-message">정확성: 50.0</div><div class="console-message">효율성: 50.0</div><div class="console-message">합계: 100.0 / 100.0</div></pre></div>
+</details>
