@@ -81,6 +81,9 @@ face에 해당하는 의상이 crow_mask, blue_sunglasses, smoky_makeup이므로
 
 # 풀이
 
+<details>
+<summary>java</summary>
+
 ```java
 import java.util.HashMap;
 
@@ -105,9 +108,39 @@ class Solution {
     }
 }
 ```
+</details>
+
+<details>
+<summary>python</summary>
+
+```python
+def solution(clothes: list):
+    answer = 1
+    cloth_map = {}
+
+    for c in clothes:
+        cloth, c_type = c[0], c[1]
+        if cloth_map.keys().__contains__(c_type):
+            cloth_map[c_type].append(cloth)
+        else:
+            cloth_map[c_type] = [cloth]
+
+    for c_type in cloth_map.keys():
+        answer = answer * (len(cloth_map[c_type]) + 1)
+
+    return answer - 1
+```
+</details>
 
 ----
 
 # 결과
-
+<details>
+<summary>java</summary>
 <div id="output" class="console-output tab-pane fade in active show"><pre class="console-content"><div></div><div class="console-heading">채점을 시작합니다.</div><div class="console-message">정확성  테스트</div><table class="console-test-group" data-category="correctness"><tbody><tr data-testcase-id="32828"><td valign="top" class="td-label">테스트 1 <span>〉</span></td><td class="result passed">통과 (0.06ms, 76.3MB)</td></tr><tr data-testcase-id="32829"><td valign="top" class="td-label">테스트 2 <span>〉</span></td><td class="result passed">통과 (0.05ms, 74.1MB)</td></tr><tr data-testcase-id="32830"><td valign="top" class="td-label">테스트 3 <span>〉</span></td><td class="result passed">통과 (0.06ms, 75.2MB)</td></tr><tr data-testcase-id="32831"><td valign="top" class="td-label">테스트 4 <span>〉</span></td><td class="result passed">통과 (0.07ms, 76.9MB)</td></tr><tr data-testcase-id="32832"><td valign="top" class="td-label">테스트 5 <span>〉</span></td><td class="result passed">통과 (0.07ms, 74.9MB)</td></tr><tr data-testcase-id="32833"><td valign="top" class="td-label">테스트 6 <span>〉</span></td><td class="result passed">통과 (0.06ms, 75.8MB)</td></tr><tr data-testcase-id="32834"><td valign="top" class="td-label">테스트 7 <span>〉</span></td><td class="result passed">통과 (0.13ms, 75.8MB)</td></tr><tr data-testcase-id="32835"><td valign="top" class="td-label">테스트 8 <span>〉</span></td><td class="result passed">통과 (0.06ms, 75.2MB)</td></tr><tr data-testcase-id="32836"><td valign="top" class="td-label">테스트 9 <span>〉</span></td><td class="result passed">통과 (0.05ms, 75.8MB)</td></tr><tr data-testcase-id="32837"><td valign="top" class="td-label">테스트 10 <span>〉</span></td><td class="result passed">통과 (0.05ms, 75.7MB)</td></tr><tr data-testcase-id="32838"><td valign="top" class="td-label">테스트 11 <span>〉</span></td><td class="result passed">통과 (0.04ms, 76.5MB)</td></tr><tr data-testcase-id="32839"><td valign="top" class="td-label">테스트 12 <span>〉</span></td><td class="result passed">통과 (0.07ms, 83.9MB)</td></tr><tr data-testcase-id="32840"><td valign="top" class="td-label">테스트 13 <span>〉</span></td><td class="result passed">통과 (0.07ms, 81.8MB)</td></tr><tr data-testcase-id="32841"><td valign="top" class="td-label">테스트 14 <span>〉</span></td><td class="result passed">통과 (0.06ms, 74MB)</td></tr><tr data-testcase-id="32842"><td valign="top" class="td-label">테스트 15 <span>〉</span></td><td class="result passed">통과 (0.04ms, 74.8MB)</td></tr><tr data-testcase-id="32843"><td valign="top" class="td-label">테스트 16 <span>〉</span></td><td class="result passed">통과 (0.05ms, 75.1MB)</td></tr><tr data-testcase-id="32844"><td valign="top" class="td-label">테스트 17 <span>〉</span></td><td class="result passed">통과 (0.08ms, 73.1MB)</td></tr><tr data-testcase-id="32845"><td valign="top" class="td-label">테스트 18 <span>〉</span></td><td class="result passed">통과 (0.05ms, 72MB)</td></tr><tr data-testcase-id="32846"><td valign="top" class="td-label">테스트 19 <span>〉</span></td><td class="result passed">통과 (0.04ms, 74.9MB)</td></tr><tr data-testcase-id="32847"><td valign="top" class="td-label">테스트 20 <span>〉</span></td><td class="result passed">통과 (0.07ms, 77MB)</td></tr><tr data-testcase-id="32848"><td valign="top" class="td-label">테스트 21 <span>〉</span></td><td class="result passed">통과 (0.05ms, 71.9MB)</td></tr><tr data-testcase-id="32849"><td valign="top" class="td-label">테스트 22 <span>〉</span></td><td class="result passed">통과 (0.05ms, 74.6MB)</td></tr><tr data-testcase-id="32850"><td valign="top" class="td-label">테스트 23 <span>〉</span></td><td class="result passed">통과 (0.06ms, 76.9MB)</td></tr><tr data-testcase-id="32851"><td valign="top" class="td-label">테스트 24 <span>〉</span></td><td class="result passed">통과 (0.04ms, 72.5MB)</td></tr><tr data-testcase-id="32852"><td valign="top" class="td-label">테스트 25 <span>〉</span></td><td class="result passed">통과 (0.06ms, 83.1MB)</td></tr><tr data-testcase-id="32853"><td valign="top" class="td-label">테스트 26 <span>〉</span></td><td class="result passed">통과 (0.07ms, 75.3MB)</td></tr><tr data-testcase-id="32854"><td valign="top" class="td-label">테스트 27 <span>〉</span></td><td class="result passed">통과 (0.06ms, 73.3MB)</td></tr><tr data-testcase-id="32855"><td valign="top" class="td-label">테스트 28 <span>〉</span></td><td class="result passed">통과 (0.06ms, 75.6MB)</td></tr></tbody></table><div class="console-heading">채점 결과</div><div class="console-message">정확성: 100.0</div><div class="console-message">합계: 100.0 / 100.0</div></pre></div>
+</details>
+
+<details>
+<summary>python</summary>
+<pre class="console-content"><div></div><div class="console-heading">채점을 시작합니다.</div><div class="console-message">정확성  테스트</div><table class="console-test-group" data-category="correctness"><tbody><tr data-testcase-id="32828"><td valign="top" class="td-label">테스트 1 <span>〉</span></td><td class="result passed">통과 (0.02ms, 10.2MB)</td></tr><tr data-testcase-id="32829"><td valign="top" class="td-label">테스트 2 <span>〉</span></td><td class="result passed">통과 (0.02ms, 10.2MB)</td></tr><tr data-testcase-id="32830"><td valign="top" class="td-label">테스트 3 <span>〉</span></td><td class="result passed">통과 (0.01ms, 10.2MB)</td></tr><tr data-testcase-id="32831"><td valign="top" class="td-label">테스트 4 <span>〉</span></td><td class="result passed">통과 (0.02ms, 10.1MB)</td></tr><tr data-testcase-id="32832"><td valign="top" class="td-label">테스트 5 <span>〉</span></td><td class="result passed">통과 (0.01ms, 10.2MB)</td></tr><tr data-testcase-id="32833"><td valign="top" class="td-label">테스트 6 <span>〉</span></td><td class="result passed">통과 (0.01ms, 10.1MB)</td></tr><tr data-testcase-id="32834"><td valign="top" class="td-label">테스트 7 <span>〉</span></td><td class="result passed">통과 (0.02ms, 10.3MB)</td></tr><tr data-testcase-id="32835"><td valign="top" class="td-label">테스트 8 <span>〉</span></td><td class="result passed">통과 (0.01ms, 10.1MB)</td></tr><tr data-testcase-id="32836"><td valign="top" class="td-label">테스트 9 <span>〉</span></td><td class="result passed">통과 (0.01ms, 10.3MB)</td></tr><tr data-testcase-id="32837"><td valign="top" class="td-label">테스트 10 <span>〉</span></td><td class="result passed">통과 (0.01ms, 10.2MB)</td></tr><tr data-testcase-id="32838"><td valign="top" class="td-label">테스트 11 <span>〉</span></td><td class="result passed">통과 (0.01ms, 10.1MB)</td></tr><tr data-testcase-id="32839"><td valign="top" class="td-label">테스트 12 <span>〉</span></td><td class="result passed">통과 (0.02ms, 10.2MB)</td></tr><tr data-testcase-id="32840"><td valign="top" class="td-label">테스트 13 <span>〉</span></td><td class="result passed">통과 (0.02ms, 10.1MB)</td></tr><tr data-testcase-id="32841"><td valign="top" class="td-label">테스트 14 <span>〉</span></td><td class="result passed">통과 (0.01ms, 10.3MB)</td></tr><tr data-testcase-id="32842"><td valign="top" class="td-label">테스트 15 <span>〉</span></td><td class="result passed">통과 (0.01ms, 10.3MB)</td></tr><tr data-testcase-id="32843"><td valign="top" class="td-label">테스트 16 <span>〉</span></td><td class="result passed">통과 (0.00ms, 10.2MB)</td></tr><tr data-testcase-id="32844"><td valign="top" class="td-label">테스트 17 <span>〉</span></td><td class="result passed">통과 (0.02ms, 10.3MB)</td></tr><tr data-testcase-id="32845"><td valign="top" class="td-label">테스트 18 <span>〉</span></td><td class="result passed">통과 (0.01ms, 10MB)</td></tr><tr data-testcase-id="32846"><td valign="top" class="td-label">테스트 19 <span>〉</span></td><td class="result passed">통과 (0.01ms, 10.3MB)</td></tr><tr data-testcase-id="32847"><td valign="top" class="td-label">테스트 20 <span>〉</span></td><td class="result passed">통과 (0.01ms, 10.2MB)</td></tr><tr data-testcase-id="32848"><td valign="top" class="td-label">테스트 21 <span>〉</span></td><td class="result passed">통과 (0.01ms, 10.2MB)</td></tr><tr data-testcase-id="32849"><td valign="top" class="td-label">테스트 22 <span>〉</span></td><td class="result passed">통과 (0.01ms, 10.3MB)</td></tr><tr data-testcase-id="32850"><td valign="top" class="td-label">테스트 23 <span>〉</span></td><td class="result passed">통과 (0.01ms, 10MB)</td></tr><tr data-testcase-id="32851"><td valign="top" class="td-label">테스트 24 <span>〉</span></td><td class="result passed">통과 (0.01ms, 10.2MB)</td></tr><tr data-testcase-id="32852"><td valign="top" class="td-label">테스트 25 <span>〉</span></td><td class="result passed">통과 (0.01ms, 10.4MB)</td></tr><tr data-testcase-id="32853"><td valign="top" class="td-label">테스트 26 <span>〉</span></td><td class="result passed">통과 (0.02ms, 10.1MB)</td></tr><tr data-testcase-id="32854"><td valign="top" class="td-label">테스트 27 <span>〉</span></td><td class="result passed">통과 (0.01ms, 10.2MB)</td></tr><tr data-testcase-id="32855"><td valign="top" class="td-label">테스트 28 <span>〉</span></td><td class="result passed">통과 (0.01ms, 10.3MB)</td></tr></tbody></table><div class="console-heading">채점 결과</div><div class="console-message">정확성: 100.0</div><div class="console-message">합계: 100.0 / 100.0</div></pre>
+</details>
