@@ -30,6 +30,8 @@ https://programmers.co.kr/learn/courses/30/lessons/42583?language=java
 ----
 
 # 풀이
+<details>
+<summary>java</summary>
 
 ```java
 import java.util.*;
@@ -93,9 +95,53 @@ class Solution {
     }
 }
 ```
+</details>
+
+<details>
+<summary>python</summary>
+
+```python
+def solution(bridge_length, weight, truck_weights):
+    curr_weight = 0
+    truck_move_time = bridge_length
+
+    moving_weights = []
+    moving_truck_times = []
+
+    time = 0
+
+    while len(truck_weights) > 0 or len(moving_truck_times) > 0:
+        time += 1
+
+        if len(moving_truck_times) > 0 and moving_truck_times[0] == 0:
+            moving_truck_times.pop(0)
+            arrived_truck_weight = moving_weights.pop(0)
+            curr_weight -= arrived_truck_weight
+
+        if len(moving_truck_times) < bridge_length and len(truck_weights) > 0 and curr_weight + truck_weights[0] <= weight:
+            start_truck_weight = truck_weights.pop(0)
+            moving_weights.append(start_truck_weight)
+            curr_weight += start_truck_weight
+
+            moving_truck_times.append(truck_move_time)
+
+        for i in range(len(moving_truck_times)):
+            moving_truck_times[i] -= 1
+
+    return time
+```
+</details>
 
 ----
 
 # 결과
 
+<details>
+<summary>java</summary>
 <div id="output" class="console-output tab-pane fade in active show"><pre class="console-content"><div></div><div class="console-heading">채점을 시작합니다.</div><div class="console-message">정확성  테스트</div><table class="console-test-group" data-category="correctness"><tbody><tr data-testcase-id="33014"><td valign="top" class="td-label">테스트 1 <span>〉</span></td><td class="result passed">통과 (142.48ms, 83.9MB)</td></tr><tr data-testcase-id="33015"><td valign="top" class="td-label">테스트 2 <span>〉</span></td><td class="result passed">통과 (2715.70ms, 83.2MB)</td></tr><tr data-testcase-id="33016"><td valign="top" class="td-label">테스트 3 <span>〉</span></td><td class="result passed">통과 (3.69ms, 79.6MB)</td></tr><tr data-testcase-id="33017"><td valign="top" class="td-label">테스트 4 <span>〉</span></td><td class="result passed">통과 (125.62ms, 75.5MB)</td></tr><tr data-testcase-id="33018"><td valign="top" class="td-label">테스트 5 <span>〉</span></td><td class="result passed">통과 (1123.73ms, 84.4MB)</td></tr><tr data-testcase-id="33019"><td valign="top" class="td-label">테스트 6 <span>〉</span></td><td class="result passed">통과 (280.16ms, 82.8MB)</td></tr><tr data-testcase-id="33020"><td valign="top" class="td-label">테스트 7 <span>〉</span></td><td class="result passed">통과 (37.06ms, 75.7MB)</td></tr><tr data-testcase-id="33021"><td valign="top" class="td-label">테스트 8 <span>〉</span></td><td class="result passed">통과 (4.95ms, 78.3MB)</td></tr><tr data-testcase-id="33022"><td valign="top" class="td-label">테스트 9 <span>〉</span></td><td class="result passed">통과 (9.64ms, 77MB)</td></tr><tr data-testcase-id="33023"><td valign="top" class="td-label">테스트 10 <span>〉</span></td><td class="result passed">통과 (5.23ms, 74.2MB)</td></tr><tr data-testcase-id="33024"><td valign="top" class="td-label">테스트 11 <span>〉</span></td><td class="result passed">통과 (0.97ms, 74.7MB)</td></tr><tr data-testcase-id="33025"><td valign="top" class="td-label">테스트 12 <span>〉</span></td><td class="result passed">통과 (3.27ms, 76.3MB)</td></tr><tr data-testcase-id="33026"><td valign="top" class="td-label">테스트 13 <span>〉</span></td><td class="result passed">통과 (6.68ms, 73.5MB)</td></tr><tr data-testcase-id="69253"><td valign="top" class="td-label">테스트 14 <span>〉</span></td><td class="result passed">통과 (4.62ms, 77.2MB)</td></tr></tbody></table><div class="console-heading">채점 결과</div><div class="console-message">정확성: 100.0</div><div class="console-message">합계: 100.0 / 100.0</div></pre></div>
+</details>
+
+<details>
+<summary>python</summary>
+<pre class="console-content"><div></div><div class="console-heading">채점을 시작합니다.</div><div class="console-message">정확성  테스트</div><table class="console-test-group" data-category="correctness"><tbody><tr data-testcase-id="33014"><td valign="top" class="td-label">테스트 1 <span>〉</span></td><td class="result passed">통과 (1.75ms, 10.4MB)</td></tr><tr data-testcase-id="33015"><td valign="top" class="td-label">테스트 2 <span>〉</span></td><td class="result passed">통과 (25.53ms, 10.3MB)</td></tr><tr data-testcase-id="33016"><td valign="top" class="td-label">테스트 3 <span>〉</span></td><td class="result passed">통과 (0.06ms, 10.1MB)</td></tr><tr data-testcase-id="33017"><td valign="top" class="td-label">테스트 4 <span>〉</span></td><td class="result passed">통과 (51.75ms, 10.3MB)</td></tr><tr data-testcase-id="33018"><td valign="top" class="td-label">테스트 5 <span>〉</span></td><td class="result passed">통과 (417.99ms, 10.3MB)</td></tr><tr data-testcase-id="33019"><td valign="top" class="td-label">테스트 6 <span>〉</span></td><td class="result passed">통과 (145.41ms, 10.2MB)</td></tr><tr data-testcase-id="33020"><td valign="top" class="td-label">테스트 7 <span>〉</span></td><td class="result passed">통과 (1.59ms, 10.2MB)</td></tr><tr data-testcase-id="33021"><td valign="top" class="td-label">테스트 8 <span>〉</span></td><td class="result passed">통과 (0.44ms, 10.2MB)</td></tr><tr data-testcase-id="33022"><td valign="top" class="td-label">테스트 9 <span>〉</span></td><td class="result passed">통과 (8.55ms, 10.3MB)</td></tr><tr data-testcase-id="33023"><td valign="top" class="td-label">테스트 10 <span>〉</span></td><td class="result passed">통과 (0.53ms, 10.2MB)</td></tr><tr data-testcase-id="33024"><td valign="top" class="td-label">테스트 11 <span>〉</span></td><td class="result passed">통과 (0.02ms, 10.1MB)</td></tr><tr data-testcase-id="33025"><td valign="top" class="td-label">테스트 12 <span>〉</span></td><td class="result passed">통과 (0.95ms, 10.2MB)</td></tr><tr data-testcase-id="33026"><td valign="top" class="td-label">테스트 13 <span>〉</span></td><td class="result passed">통과 (3.29ms, 10.1MB)</td></tr><tr data-testcase-id="69253"><td valign="top" class="td-label">테스트 14 <span>〉</span></td><td class="result passed">통과 (0.07ms, 10.1MB)</td></tr></tbody></table><div class="console-heading">채점 결과</div><div class="console-message">정확성: 100.0</div><div class="console-message">합계: 100.0 / 100.0</div></pre>
+</details>
