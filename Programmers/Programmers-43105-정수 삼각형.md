@@ -2,6 +2,10 @@
 
 https://school.programmers.co.kr/learn/courses/30/lessons/43105
 
+키 포인트
+- 맨 아래에서 부터 합을 계산하기
+- DP 를 이용해서 최대 합을 미리 구해놓기
+
 ----
 
 # 풀이
