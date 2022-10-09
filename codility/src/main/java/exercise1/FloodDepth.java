@@ -1,6 +1,6 @@
-package exercise1.flooddepth;
+package exercise1;
 
-class Solution {
+class FloodDepth {
 
     public int solution(int[] A) {
 

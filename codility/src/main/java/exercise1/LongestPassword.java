@@ -1,6 +1,6 @@
-package exercise1.longestpassword;
+package exercise1;
 
-class Solution {
+class LongestPassword {
 
     public int solution(String S) {
         // 1. 공백 기준으로 문자 나누기

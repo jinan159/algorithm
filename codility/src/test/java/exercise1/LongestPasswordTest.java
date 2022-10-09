@@ -1,13 +1,13 @@
-package exercise1.longestpassword;
+package exercise1;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-class SolutionTest {
+class LongestPasswordTest {
 
-    private final Solution solution = new Solution();
+    private final LongestPassword longestPassword = new LongestPassword();
 
     @ParameterizedTest
     @CsvSource(value = {
@@ -20,7 +20,7 @@ class SolutionTest {
         "test 5 a0A pass007 ?xy1:7"
     }, delimiter = ':')
     void one_character(String S, int result) {
-        assertEquals(solution.solution(S), result);
+        assertEquals(longestPassword.solution(S), result);
     }
 
 }

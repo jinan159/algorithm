@@ -1,4 +1,4 @@
-package exercise1.flooddepth;
+package exercise1;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -7,14 +7,14 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-class SolutionTest {
+class FloodDepthTest {
 
-    private final Solution solution = new Solution();
+    private final FloodDepth floodDepth = new FloodDepth();
 
     @ParameterizedTest
     @MethodSource("provide")
     void one_character(int[] A, int result) {
-        assertEquals(result, solution.solution(A));
+        assertEquals(result, floodDepth.solution(A));
     }
 
     private static Stream<Arguments> provide() {
